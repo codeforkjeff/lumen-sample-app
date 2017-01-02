@@ -6,9 +6,9 @@ This is a sample application running the
 platform. It's a starting point for getting a test app running and
 playing with customization.
 
-Eventually this will be replaced with some way to generate new
-skeletal Lumen applications, using sbt template, giter8, activator, or
-something else.
+Eventually this repository will be replaced with some way to generate
+new skeletal Lumen applications, using sbt template, giter8,
+activator, or something else.
 
 # Installation
 
@@ -26,7 +26,8 @@ git clone git@github.com:codeforkjeff/lumen-sample-app.git
 
 ## Configure Solr
 
-If you aren't already running Solr 6.x somewhere, download it.
+If you aren't already running [Solr](https://lucene.apache.org/solr/)
+6.x somewhere, download it and unpack it into `/opt/solr`.
 
 Lumen's default configuration expects a Solr core named
 "lumen-core". You can use the config files in the `solr/` directory,
@@ -35,10 +36,12 @@ which is just a copy of the Solr config that Blacklight ships with.
 ```
 mkdir /opt/solr/server/solr/lumen-core
 cp -rp ~/lumen-sample-app/solr/conf /opt/solr/server/solr/lumen-core
+# now start solr
+/opt/solr/bin/solr start
 ```
 
-Restart Solr. Then you should be able to add the core to Solr using
-the web interface at http://localhost:8983/solr
+You should be able to add the core to Solr using the web interface at
+http://localhost:8983/solr
 
 ## Index Some Records
 
