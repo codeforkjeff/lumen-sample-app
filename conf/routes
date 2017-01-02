@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# we don't do this because we need to use custom controllers
+# -> /catalog lumen.Routes
+
+GET     /                    controllers.CustomCatalogController.index()
+GET     /catalog             controllers.CustomCatalogController.index()
+GET     /catalog/:id         controllers.CustomCatalogController.show(id: String)
+GET     /catalog/facet/:field controllers.CustomCatalogController.facet(field: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file        lumen.controllers.Assets.versioned(path="/public/lib/lumen", file)
